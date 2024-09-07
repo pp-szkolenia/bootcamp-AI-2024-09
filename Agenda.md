@@ -41,7 +41,6 @@
 
 ## 2. Przydatne linki
 
-* https://cloud.patrykpalej.com/s/...
+* https://cloud.patrykpalej.com/index.php/s/P83ZFf2HPsKm47Y
 * https://github.com/pp-szkolenia/bootcamp-AI-2024-09
-
 
