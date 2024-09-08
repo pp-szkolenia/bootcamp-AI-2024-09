@@ -1,1 +1,5 @@
 Function: add | Timestamp: 2024-09-08 10:08:21.733611 | Args: (1, 2, 10, 20), {'c': 10, 'd': 20}
+Function: wrapper | Timestamp: 2024-09-08 10:34:26.045100 | Args: (10, 20), {}
+Function: wrapper | Timestamp: 2024-09-08 10:35:11.663003 | Args: (10, 20), {}
+Function: add | Timestamp: 2024-09-08 10:35:39.639579 | Args: (10, 20), {}
+Function: <lambda> | Timestamp: 2024-09-08 10:46:12.941194 | Args: (1.242342, 2.23), {}

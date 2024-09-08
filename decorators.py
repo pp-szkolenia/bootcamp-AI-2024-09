@@ -7,6 +7,7 @@ def measure_time(func):
         result = func(*args, **kwargs)
         end_time = time.time()
         print(f"Czas działania funkcji {func.__name__}: {round(end_time - start_time, 2)}s.")
+        return result
 
     return wrapper
 
@@ -36,3 +37,24 @@ def add(a, b):
 
 add(1, 2)
 
+# =====
+@measure_time
+@log
+def add(a, b):
+    return a + b
+
+
+# ======
+
+def actual_rounding_decorator(param):
+    def round_result(func):
+        return lambda *args, **kwargs: round(func(*args, **kwargs), param)
+    return round_result
+
+
+@actual_rounding_decorator(3)
+def calculate_average(a, b):
+    return (a + b) / 2
+
+
+calculate_average(1.242342, 2.23)
