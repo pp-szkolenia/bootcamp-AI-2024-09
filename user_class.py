@@ -12,6 +12,12 @@ class User:
         if self.password == old_password:
             self.password = new_password
 
+    def __repr__(self):
+        return f"User(id={self.user_id})"
+
+    def __str__(self):
+        return self.username
+
 
 class Admin(User):
     def __init__(self, user_id, username, email_address, password, can_add_users):
@@ -26,3 +32,7 @@ class Admin(User):
     @staticmethod
     def change_password_of_another_user(user, new_password):
         user.password = new_password
+
+
+user = User(1, "Andrzej", "...", "...")
+print([user])
