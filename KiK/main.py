@@ -20,3 +20,18 @@ def put_item_on_board(board, coordinates, mark):
     board[coordinates] = mark
 
     return board, True
+
+
+def check_if_game_over(board):
+    for mark in ["x", "o"]:
+        if np.all(board.diagonal() == mark) or np.all(np.fliplr(board).diagonal() == mark):
+            return True
+
+        for axis in [0, 1]:
+            if np.any(np.all(board == mark, axis=axis)):
+                return True
+
+    if "." not in board:
+        return True
+
+    return False
