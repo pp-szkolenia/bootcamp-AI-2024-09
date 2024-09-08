@@ -35,3 +35,14 @@ def check_if_game_over(board):
         return True
 
     return False
+
+
+def get_coordinates_from_player(player):
+    while True:
+        input_text = f"{'Krzyżyk' if player in ['x', 'X'] else 'Kółko'}: podaj współrzędne w formacie (y,x): "
+        raw_input = input(input_text)
+
+        if raw_input[0].isnumeric() and raw_input[2].isnumeric():
+            break
+
+    return int(raw_input[0]), int(raw_input[2])
