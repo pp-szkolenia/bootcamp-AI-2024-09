@@ -23,5 +23,6 @@ class Admin(User):
             new_user = User(user_id, username, email_address, password)
             return new_user
 
-    def change_password_of_another_user(self, user, new_password):
+    @staticmethod
+    def change_password_of_another_user(user, new_password):
         user.password = new_password

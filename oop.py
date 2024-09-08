@@ -20,10 +20,21 @@ class TaskInheritance(Task):
         self._comments = []
 
 
+class Task:
+    def __init__(self, text, assignee=None, tags=[]):
+        self.description = text
+        self.assignee = assignee
+        self.tags = tags
+        self.comments = []
 
-task = Task("opis zadania")
-print(task._comments)
-print(task._Task__tags)
+    @classmethod
+    def from_dict(cls, task_dict):
+        text = task_dict.get("description")
+        assignee = task_dict.get("assignee")
+        tags = task_dict.get("tags")
 
-task_inherit = TaskInheritance()
-print(task_inherit._Task__tags)
+        return cls(text, assignee, tags)
+
+
+task = Task.from_dict({"description": "Learn Python from dict", "assignee": "Andrzej", "tags": []})
+print(task)
